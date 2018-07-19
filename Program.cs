@@ -29,41 +29,41 @@ namespace ConsoleApp3
             double qd = Math.Sqrt(d);
             double x1 = (-b + qd) / (2 * a);
             double x2 = (-b - qd) /( 2 * a);
-             
-            if (a == 0)
+            try
             {
-                if (b == 0)
+                if (a == 0)
+                {
+                    if (b == 0)
+                    {
+                        Console.WriteLine("Нет решений");
+                    }
+                    else
+                    {
+                        Console.WriteLine(-c / b);
+                    }
+                }
+                else if (d < 0)
                 {
                     Console.WriteLine("Нет решений");
-                    Console.ReadKey();
+                }
+                else if (c == 0)
+                {
+                    Console.WriteLine(-b / a);
+                    Console.WriteLine(c);
                 }
                 else
                 {
-                    Console.WriteLine(-c / b);
-                    Console.ReadKey();
+                    Console.WriteLine(x1);
+                    Console.WriteLine(x2);
                 }
             }
-            else if (d < 0)
+            catch(Exception)
             {
-                Console.WriteLine("Нет решений");
-                Console.ReadKey();
+                Console.WriteLine("Ой, что-то пошло не так");
             }
-            else if (c == 0)
-            {
-                Console.WriteLine(-b / a);
-                Console.WriteLine(c);
-                Console.ReadKey();
-            }
-            else
-            {
-                Console.WriteLine(x1);
-                Console.WriteLine(x2);
-                Console.ReadKey();
-            }
+            Console.ReadKey();
         }
     }
 }
 
-     # Equation
-# Equation
-# Equation
+    
